@@ -1,7 +1,3 @@
-I wanted to get an AxxSolder assembled by PCBWay while AxxAxx is on his world holiday. Unfortunately it doesn't appear that the project contained a centroid file for v3.2, and PCBWay couldn't figure out where to place the two new resistors (R49 and R50), so I opened the project in KiCAD and created new centroid files for them, while have been added to the fabrication folder and a pull request created back to the main project for others to use if they want, or to correct me if I did it wrong. If you want to know more about the project, check it out below or at the main repo (https://github.com/AxxAxx/AxxSolder).
-
--------------------------
-
 [![Build Main](https://github.com/AxxAxx/AxxSolder/actions/workflows/build-main.yaml/badge.svg?branch=main&event=push)](https://github.com/AxxAxx/AxxSolder/actions/workflows/build-main.yaml)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 <a href='https://ko-fi.com/axxaxx' target='_blank'><img height='35' style='border:0px;height:20px;' src='https://github.com/AxxAxx/kofi-button/blob/main/Ko-fi_Buy-me-a-coffee_button.png?raw=true' border='0' alt='Donate' />  
