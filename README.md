@@ -112,31 +112,39 @@ Failing to detect the handle type may cause permanent damage to the cartridge as
 Flashing or updating the firmware on the STM32 MCU can be done in two ways, by using a SWD programmer or directly via USB. 
 
 ## SWD programmer
+
 These come in a variety of models and are available from several different places online. In the below example a [STLINK-V3MINIE](https://www.st.com/en/development-tools/stlink-v3minie.html) SWD programmer is used. The MCU is programmed by the following steps:
 1. Disconnect any soldering iron handles from AxxSolder during the firmware update process.
-2. Download the latest AxxSolder.bin file from [Releases](https://github.com/AxxAxx/AxxSolder/releases)
-3. Connect your SWD programmer to the target MCU with GND, 3.3V, (N)RST, SWCLK, SWDIO
+2. Download the latest `AxxSolder.bin` file from [Releases](https://github.com/AxxAxx/AxxSolder/releases)
+3. Connect your SWD programmer to the target MCU with GND, 3.3V, (N)RST, SWCLK, SWDIO (see table below)
 4. If your SWD programmer *can not* supply 3.3V it is necessary to power the AxxSolder from an external supply.
 5. Start your programming software. [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) is used in this example.
 6. Connect to the target by selecting *ST-LINK* and click on *Connect*
-7. Load the latest AxxSolder.bin downloaded in *Step 2* by clicking *Open file* and select the downloaded binary file.
+7. Load the latest `AxxSolder.bin` downloaded in *Step 2* by clicking *Open file* and select the downloaded binary file.
 8. Write the firmware to the MCU by clicking *Download*.
 9. If you get the message *File download complete* everything succeeded and the SWD programmer can be disconnected and AxxSolder power cycled once and AxxSolder should boot.
 <img src="./photos/AxxSolder_SWD_connection.png" width="400">
 
 ![AxxSolder_SWD_programming](./photos/AxxSolder_SWD_programming.png)
+
+| ST-LINK  | AxxSolder J4 |
+|----------|--------------|
+| GND      | GND          |
+| ?        | 3.3V         |
+| ?        | (N)RST       |
+| ?        | SWCLK        |
+| ?        | SWDIO        |
+
 ## USB (DFU mode)
-1. Disconnect any soldering iron handles from AxxSolder during the firmware update process.
-2. Download the latest AxxSolder.bin file from [Releases](https://github.com/AxxAxx/AxxSolder/releases)
-3. Connect AxxSolder via USB to a computer that runs [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html).
-4. Hold down the most right button while powering on AxxSolder to enter DFU mode.
+
+1. Disconnect any soldering iron handles from _AxxSolder_ during the firmware update process.
+2. Download the latest `AxxSolder.bin` file from [Releases](https://github.com/AxxAxx/AxxSolder/releases)
+3. Connect the AxxSolder via USB to a computer that runs [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) - hold down the rightmost button (S3) while plugging in the USB connector in order to enter DFU mode (your safest bet is to use a USB-A to USB-C cable, because in some cases the PD negotiation may mess things up - a USB-C to C cable that is known to **not** support PD negotiation (CC lines unconnected) can alternatively be used).
 5. Connect to the target by selecting *USB* and click on *Connect*
 6. Load the latest AxxSolder.bin downloaded in *Step 2* by clicking *Open file* and select the downloaded binary file.
 7. Write the firmware to the MCU by clicking *Download*.
 8. If you get the message *File download complete* everything succeeded and the USB cable can be disconnected.
 9. Power cycle once and AxxSolder should boot.
-
-
 
 # First start up after build
 The first start up after you have built your AxxSolder can be intense. Double check all solder connections under a loupe/microscope. Especially the OPA2387, LTC4440 and the STM32G431 are small packages with tight pad spacing and can have solder bridges. Do also double check the connections to the soldering iron/stand which are shown in this document under [AxxSolder Station](#axxsolder-station) and [AxxSolder Portable](#axxsolder-portable).  
