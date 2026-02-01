@@ -116,7 +116,7 @@ Flashing or updating the firmware on the STM32 MCU can be done in two ways, by u
 These come in a variety of models and are available from several different places online. In the below example a [STLINK-V3MINIE](https://www.st.com/en/development-tools/stlink-v3minie.html) SWD programmer is used. The MCU is programmed by the following steps:
 1. Disconnect any soldering iron handles from AxxSolder during the firmware update process.
 2. Download the latest `AxxSolder.bin` file from [Releases](https://github.com/AxxAxx/AxxSolder/releases)
-3. Connect your SWD programmer to the target MCU with GND, 3.3V, (N)RST, SWCLK, SWDIO (see table below)
+3. Connect your SWD programmer to the target MCU with GND, 3.3V, (N)RST, SWCLK and SWDIO (see table below)
 4. If your SWD programmer *can not* supply 3.3V it is necessary to power the AxxSolder from an external supply.
 5. Start your programming software. [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) is used in this example.
 6. Connect to the target by selecting *ST-LINK* and click on *Connect*
