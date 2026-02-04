@@ -127,13 +127,13 @@ These come in a variety of models and are available from several different place
 
 ![AxxSolder_SWD_programming](./photos/AxxSolder_SWD_programming.png)
 
-| ST-LINK  | AxxSolder J4 |
+| STLINK-V3MINIE CN2 | AxxSolder J4 |
 |----------|--------------|
 | GND      | GND          |
-| ?        | 3.3V         |
-| ?        | (N)RST       |
-| ?        | SWCLK        |
-| ?        | SWDIO        |
+| VCC      | 3.3V         |
+| RST      | (N)RST       |
+| CLK      | SWCLK        |
+| TMS      | SWDIO        |
 
 ## USB (DFU mode)
 
